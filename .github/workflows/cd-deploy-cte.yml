@@ -36,12 +36,11 @@ jobs:
         id: auth
         uses: 'google-github-actions/auth@v1'
         with:
-          token_format: 'id_token'
           workload_identity_provider: 'projects/${{vars.GCP_PROJECT_NUMBER}}/locations/global/workloadIdentityPools/gh-oidc-api-cicd-2/providers/gh-oidc-api-cicd-2'
           service_account: 'gh-oidc-cicd-2@${{vars.GCP_PROJECT_ID}}.iam.gserviceaccount.com'
       
       - name: Show Output
-        run: echo ${{ steps.auth.outputs.id_token  }}
+        run: echo ${{ steps.auth.outputs  }}
 
       # Authenticate Docker to Google Cloud Artifact Registry
       # - name: Docker Auth
