@@ -34,11 +34,10 @@ jobs:
       
       - name: Google Auth
         id: auth
-        uses: 'google-github-actions/auth@v0'
+        uses: 'google-github-actions/auth@v1'
         with:
-          token_format: 'access_token'
-          workload_identity_provider: 'projects/${{ vars.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/gh-oidc-api-cicd/providers/gh-oidc-api-cicd'
-          service_account: 'gh-oicd-oidc-api-cicd@${{ vars.GCP_PROJECT_ID }}.iam.gserviceaccount.com' 
+          workload_identity_provider: 'projects/${{vars.GCP_PROJECT_NUMBER}}/locations/global/workloadIdentityPools/gh-oidc-api-cicd-2/providers/gh-oidc-api-cicd-2'
+          service_account: 'gh-oidc-cicd-2@${{vars.GCP_PROJECT_ID}}.iam.gserviceaccount.com'
 
       # Authenticate Docker to Google Cloud Artifact Registry
       - name: Docker Auth
