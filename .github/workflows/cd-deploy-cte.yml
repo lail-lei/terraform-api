@@ -36,6 +36,9 @@ jobs:
         with:
           project_id: ${{vars.GCP_PROJECT_ID}}
 
+      - name: Configure Docker
+        run: gcloud auth configure-docker --quiet
+
       - name: Build image
         run: |-
           docker build \
