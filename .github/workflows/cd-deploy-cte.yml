@@ -40,7 +40,7 @@ jobs:
           service_account: 'gh-oidc-api-cicd-2@${{vars.GCP_PROJECT_ID}}.iam.gserviceaccount.com'
       
       - name: Show Output
-        run: echo ${{ toJson(steps.auth.auth_token)  }}
+        run: echo ${{ toJson(steps.auth.outputs.auth_token)  }}
 
       # Authenticate Docker to Google Cloud Artifact Registry
       # - name: Docker Auth
