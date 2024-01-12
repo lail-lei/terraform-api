@@ -9,4 +9,4 @@ var server = http.createServer(function (request, response) {
 
 server.listen(port)
 
-console.log('Lail Success Server running at http://localhost:' + port)
+console.log('Lail Bites Server running at http://localhost:' + port)
